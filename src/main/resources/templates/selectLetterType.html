@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Select Letter Type</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h2>Select Letter Type</h2>
+<form th:action="@{/select}" method="post">
+    <div>
+        <label>Type:</label>
+        <select name="type" required>
+            <option value="Random">Random</option>
+            <option value="Funny Story">Funny Story</option>
+            <option value="Encouragement">Encouragement</option>
+            <option value="Advice">Advice</option>
+            <option value="Anything">Anything</option>
+        </select>
+    </div>
+    <div>
+        <label>Comment:</label>
+        <input type="text" name="comment" required/>
+    </div>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+<a th:href="@{/home}">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Request a New Letter</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h2>Request a New Letter</h2>
+<form th:action="@{/request-letter}" method="post">
+    <label for="type">Type:</label>
+    <select id="type" name="type">
+        <option value="Random">Random</option>
+        <option value="Funny">Funny</option>
+        <option value="Comfort">Comfort</option>
+        <option value="Advice">Advice</option>
+        <option value="Anything">Anything</option>
+    </select><br>
+    <label for="comment">Comment:</label>
+    <textarea id="comment" name="comment" rows="3" cols="30"></textarea><br>
+    <button type="submit">Submit</button>
+</form>
+<a th:href="@{/home}">Cancel</a>
+</body>
+</html>
