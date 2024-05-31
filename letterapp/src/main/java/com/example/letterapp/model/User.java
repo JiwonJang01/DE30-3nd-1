@@ -1,5 +1,6 @@
 package com.example.letterapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.Set;
 
@@ -28,6 +29,7 @@ public class User {
     @OneToMany(mappedBy = "recipient")
     private Set<Letter> receivedLetters;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private Set<LetterType> letterTypes;
 

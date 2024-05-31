@@ -1,12 +1,12 @@
 package com.example.letterapp.controller;
 
+import com.example.letterapp.dto.UserRegisterDto;
 import com.example.letterapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AuthController {
@@ -25,13 +25,14 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public String registerUser(@RequestParam String username, @RequestParam String password, @RequestParam String confirmPassword, Model model) {
-        if (!password.equals(confirmPassword)) {
+    public String register(Model model, UserRegisterDto userRegisterDto
+                           ) {
+        if (!userRegisterDto.getPassword().equals(userRegisterDto.getConfirmPassword())) {
             model.addAttribute("error", "Passwords do not match");
             return "register";
         }
 
-        userService.registerUser(username, password);
+        userService.registerUser(userRegisterDto.getNickname(), userRegisterDto.getPassword());
         return "redirect:/login";
     }
 }
