@@ -5,51 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fd0c2fa-25ee-4860-977a-fcf0bd2a8cbc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/.idea/letterapp.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/.idea/modules/letterapp.letterapp.main~1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/LetterappApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/config/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/controller/AuthController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/controller/LetterController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/model/Letter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/model/LetterType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/repository/LetterRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/repository/LetterTypeRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/service/LetterService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/service/LetterTypeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/util/CustomUserDetailsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/static/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/static/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/templates/letters.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/templates/received.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/templates/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/templates/write.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/test/java/com/example/letterapp/LetterappApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +22,12 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="letterapp" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -85,30 +46,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build letterapp.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.LetterappApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/DE30-3nd-1&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build letterapp.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.LetterappApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/git/DE30-3nd-1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "Errors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\springStudy\letterapp\letterapp\src\main\resources\static" />
@@ -131,8 +94,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+        <option value="jdk-21.0.2-corretto-21.0.2-4caba194b151-51586f01" />
       </set>
     </attachedChunks>
   </component>
