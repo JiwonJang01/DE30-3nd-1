@@ -11,9 +11,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="com.example.letterapp" target="21" />
-      <module name="com.example.letterapp.main" target="21" />
-      <module name="com.example.letterapp.test" target="21" />
       <module name="letterapp.letterapp.main" target="21" />
       <module name="letterapp.letterapp.test" target="21" />
     </bytecodeTargetLevel>
