@@ -4,26 +4,96 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1707fb4f-9c81-4900-9bcf-957322b0d572" name="Changes" comment="" />
+    <list default="true" id="0fd0c2fa-25ee-4860-977a-fcf0bd2a8cbc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/.idea/letterapp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/.idea/modules/letterapp.letterapp.main~1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/LetterappApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/controller/LetterController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/model/Letter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/model/LetterType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/repository/LetterRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/repository/LetterTypeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/service/LetterService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/service/LetterTypeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/java/com/example/letterapp/util/CustomUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/static/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/static/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/templates/letters.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/templates/received.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/templates/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/main/resources/templates/write.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/letterapp/src/test/java/com/example/letterapp/LetterappApplicationTests.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/letterapp">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2hDfLBVqlKL9Lhd85wUKQbxERQS" />
+  <component name="ProjectId" id="2hD21iZUfLlkR0WgzLvrk5PYPKQ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Gradle.Build letterapp.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.LetterappApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/DE30-3nd-1&quot;,
@@ -32,9 +102,32 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\springStudy\letterapp\letterapp\src\main\resources\static" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\springStudy\letterapp\letterapp\src\main\resources\static\css" />
+      <recent name="C:\springStudy\letterapp\letterapp\src\main\resources\static" />
+      <recent name="C:\springStudy\letterapp\letterapp\src\main\resources\static\js" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="LetterappApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="com.example.letterapp.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.letterapp.LetterappApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -46,12 +139,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1707fb4f-9c81-4900-9bcf-957322b0d572" name="Changes" comment="" />
-      <created>1717133509290</created>
+      <changelist id="0fd0c2fa-25ee-4860-977a-fcf0bd2a8cbc" name="Changes" comment="" />
+      <created>1717114113509</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1717133509290</updated>
-      <workItem from="1717133510361" duration="2009000" />
+      <updated>1717114113509</updated>
+      <workItem from="1717114114580" duration="14119000" />
+      <workItem from="1717137366779" duration="29000" />
     </task>
     <servers />
   </component>
