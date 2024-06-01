@@ -39,13 +39,11 @@ public class LetterService {
     }
 
     // 편지 리스트
-    public List<Letter> getLettersByRecipient(String recipient) {
-        return letterRepository.findByRecipient(recipient);
+    public List<Letter> getLettersWithComments() {
+        return letterRepository.findAll();
     }
 
-
     // 편지 내용
-
     public String getLetterContentById(Long id) {
         Letter letter = letterRepository.findById(id).orElse(null);
         if (letter == null) {
