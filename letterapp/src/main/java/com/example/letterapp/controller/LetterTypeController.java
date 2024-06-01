@@ -102,15 +102,6 @@ public class LetterTypeController {
 //    }
 
 
-    // /select.html로 이동하기 위한 추가
-    @GetMapping("/select")
-    public String selectLetterTypePage() {
-        return "select.html"; // Thymeleaf 템플릿의 파일 이름
-    }
-
-
-
-
     // 전체 POST코드
     @PostMapping("/change")
     public ResponseEntity<LetterType> saveLetterType(@RequestBody LetterTypeDto letterTypeDto) {
