@@ -33,7 +33,7 @@
             <a th:if="${#authorization.expression('isAuthenticated()')}" th:href="@{/letters}" class="btn btn-secondary btn-lg mt-2">내 편지함</a>
             <a th:if="${#authorization.expression('!isAuthenticated()')}" th:href="@{/login}" class="btn btn-primary btn-lg">로그인</a>
             <a th:if="${#authorization.expression('!isAuthenticated()')}" th:href="@{/register}" class="btn btn-secondary btn-lg mt-2">회원가입</a>
-            <a th:if="${#authorization.expression('isAuthenticated()')}" th:href="@{/api/lettertype/select}" class="btn btn-info btn-lg mt-2">받고 싶은 편지 선택하기</a>
+            <a th:if="${#authorization.expression('isAuthenticated()')}" th:href="@{/select}" class="btn btn-info btn-lg mt-2">받고 싶은 편지 선택하기</a>
         </div>
     </div>
     <div class="row mt-4">
