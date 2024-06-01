@@ -19,7 +19,7 @@
 
             <td><input type="text" class="nickname" placeholder=" 닉네임은 바꿀 수 없어요" name="nickname" required></td>
         </tr>
-        <!--        에러 문구 추가 -->
+<!--        에러 문구 추가 -->
         <tr>
             <td th:if="${nicknameError}" th:text="${nicknameError}" style="color: red;"></td>
         </tr>
@@ -37,7 +37,7 @@
         <tr>
             <td><input type="password" name="confirmPassword" class="password" placeholder="신중하게 입력하세요" required></td>
         </tr>
-        <!--        일치여부 확인 에러 문구 추가-->
+<!--        일치여부 확인 에러 문구 추가-->
         <tr>
             <td th:if="${passwordError}" th:text="${passwordError}" style="color: red;"></td>
         </tr>

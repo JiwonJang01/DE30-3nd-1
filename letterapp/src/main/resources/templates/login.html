@@ -24,6 +24,11 @@
         <tr>
             <td><input type="password" class="password" placeholder=" 비밀번호를 입력해주세요" th:name="password" required></td>
         </tr>
+
+<!--        불일치 에러 문구 추가-->
+        <tr>
+            <td th:if="${param.error}" style="color: red;">닉네임 또는 비밀번호가 올바르지 않습니다</td>
+        </tr>
         <tr>
             <td><button type="submit" class="btn">로그인하기</button></td>
         </tr>

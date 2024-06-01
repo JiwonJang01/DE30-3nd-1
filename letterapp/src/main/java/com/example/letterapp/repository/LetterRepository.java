@@ -8,4 +8,7 @@ import java.util.List;
 public interface LetterRepository extends JpaRepository<Letter, Long> {
     // 편지 상세
     List<Letter> findByRecipient(String recipient);
+
+    // 전체 편지 수 계산을 위해 추가
+    long count();
 }
