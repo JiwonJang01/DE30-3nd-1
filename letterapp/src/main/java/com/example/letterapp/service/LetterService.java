@@ -51,4 +51,12 @@ public class LetterService {
         }
         return letter.getContent(); // 편지의 내용 반환
     }
+
+
+    // countLetters 새로운 메서드 추가: 전체 편지 수 계산
+    public long countLetters() {
+        return letterRepository.count();
+    }
+
+
 }

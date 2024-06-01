@@ -8,6 +8,7 @@ import com.example.letterapp.service.LetterTypeService;
 import com.example.letterapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -16,8 +17,9 @@ import java.util.List;
 /*
 I-wish-001(받고 싶은 편지 선택하기 화면)
  */
-@RestController
+@RestController // html호출을 위해 수정
 @RequestMapping("/api/lettertype")
+//@RequestMapping("/")
 public class LetterTypeController {
 
     private final LetterTypeService letterTypeService;
@@ -76,6 +78,7 @@ public class LetterTypeController {
      * idx_user 값을 받음
      * LetterType 엔터티내용 전체를 응답으로 주기(JSON 타입)
      */
+
     @GetMapping("/user/{idx_user}/lettertype")
     public List<LetterType> getLetterTypesForUser(@PathVariable("idx_user") Long idx_user) {
         return letterTypeService.getLetterTypesForUser(idx_user);
@@ -97,6 +100,15 @@ public class LetterTypeController {
 //            return ResponseEntity.status(500).body(null); // 500 Internal Server Error
 //        }
 //    }
+
+
+    // /select.html로 이동하기 위한 추가
+    @GetMapping("/select")
+    public String selectLetterTypePage() {
+        return "select.html"; // Thymeleaf 템플릿의 파일 이름
+    }
+
+
 
 
     // 전체 POST코드

@@ -60,5 +60,12 @@ public class LetterController {
         return "letter";
     }
 
-
+    // totalLetters 새로운 메서드 추가: 전체 편지 수를 계산하여 인덱스 페이지로 전달
+    // 메서드 추가 후 빌드가 안되서 /index로 매핑 수정
+    @GetMapping("/index")
+    public String showIndexPage(Model model) {
+        long totalLetters = letterService.countLetters(); // 전체 편지 수 계산
+        model.addAttribute("totalLetters", totalLetters); // 모델에 추가
+        return "index"; // 인덱스 페이지로 이동
+    }
 }
