@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LetterTypeService {
@@ -44,4 +45,9 @@ public class LetterTypeService {
                 .orElseThrow(() -> new RuntimeException("Letter type not found"));
     }
 
+    public Optional<LetterType> getLetterTypeById(Long letterTypeId) {
+        return letterTypeRepository.findById(letterTypeId);
+    }
 }
+
+// dkfkdkdkfk
