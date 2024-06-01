@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>받고 싶은 편지 선택하기</title>
+    <!-- CSS 스타일 시트 링크 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* 추가적인 스타일링은 여기에 작성 */
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5 mb-4">받고 싶은 편지 선택하기</h1>
+    <!-- 받고 싶은 편지 유형 선택 폼 -->
+    <form id="letterTypeForm">
+        <div class="form-group">
+            <label for="emailSub">이메일 수신 여부:</label>
+            <input type="checkbox" id="emailSub" name="emailSub">
+        </div>
+        <div class="form-group">
+            <label for="email">이메일 주소:</label>
+            <input type="email" id="email" name="email" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="randomSub">랜덤 편지 수신 여부:</label>
+            <input type="checkbox" id="randomSub" name="randomSub">
+        </div>
+        <div class="form-group">
+            <label for="category">카테고리 선택:</label>
+            <select id="category" name="category[]" class="form-control" multiple>
+                <option value="1">카테고리 1</option>
+                <option value="2">카테고리 2</option>
+                <option value="3">카테고리 3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="comment">코멘트:</label>
+            <textarea id="comment" name="comment" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">저장하기</button>
+    </form>
+</div>
+
+<!-- jQuery 및 Bootstrap 자바스크립트 CDN 링크 -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- 폼 제출 처리를 위한 자바스크립트 코드 -->
+<script>
+    $(document).ready(function() {
+        // 폼이 제출될 때의 이벤트 핸들러
+        $('#letterTypeForm').submit(function(event) {
+            event.preventDefault(); // 기본 동작 방지
+
+            // 폼 데이터 가져오기
+            var formData = $(this).serialize();
+
+            // Ajax를 사용하여 서버에 데이터 전송
+            $.ajax({
+                type: 'POST',
+                url: '/api/lettertype/change', // 변경 API 엔드포인트 URL
+                data: formData, // 폼 데이터 전송
+                success: function(response) {
+                    // 성공 시에 처리할 작업
+                    alert('편지 유형이 성공적으로 저장되었습니다.');
+                    // 여기에 원하는 작업 추가
+                },
+                error: function(xhr, status, error) {
+                    // 실패 시에 처리할 작업
+                    alert('편지 유형 저장에 실패했습니다.');
+                    console.error(xhr.responseText); // 오류 메시지 콘솔에 출력
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
