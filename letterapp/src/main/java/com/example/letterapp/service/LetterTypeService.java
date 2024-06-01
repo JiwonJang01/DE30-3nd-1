@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -48,6 +49,8 @@ public class LetterTypeService {
     public Optional<LetterType> getLetterTypeById(Long letterTypeId) {
         return letterTypeRepository.findById(letterTypeId);
     }
-}
 
-// dkfkdkdkfk
+    public List<Map<String, Object>> getAllLetterTypesWithUserDetails() {
+        return letterTypeRepository.findAllLetterTypesWithUserDetails();
+    }
+}

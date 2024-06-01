@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /*
@@ -117,5 +118,10 @@ public class LetterTypeController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); // 500 Internal Server Error
         }
+    }
+
+    @GetMapping("/want")
+    public List<Map<String, Object>> getAllLetterTypesWithUserDetails() {
+        return letterTypeService.getAllLetterTypesWithUserDetails();
     }
 }

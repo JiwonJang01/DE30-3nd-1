@@ -38,7 +38,6 @@ public class User {
     @JsonIgnore
 //    @OneToMany(mappedBy = "user")
 //    private Set<LetterType> letterTypes;
-
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<LetterType> letterTypes;
 

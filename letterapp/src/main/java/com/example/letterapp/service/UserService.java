@@ -48,10 +48,10 @@ public class UserService {
         return userRepository.findByNickname(nickname) != null;
     }
 
-    // 닉네임 중복 확인 isNicknameExists 추가
-    public boolean isNicknameExists(String nickname) {
-        return userRepository.findByNickname(nickname) != null;
-    }
+//    // 닉네임 중복 확인 isNicknameExists 추가
+//    public boolean isNicknameExists(String nickname) {
+//        return userRepository.findByNickname(nickname) != null;
+//    }
 
     public User findByUsername(String username) {
         return userRepository.findByNickname(username);

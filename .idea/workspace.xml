@@ -5,21 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fd0c2fa-25ee-4860-977a-fcf0bd2a8cbc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/HtmlController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/LetterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/LetterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/LetterappApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/LetterappApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/LetterTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/LetterTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/repository/LetterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/repository/LetterRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/service/LetterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/service/LetterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/repository/LetterTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/repository/LetterTypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/service/LetterTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/service/LetterTypeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/templates/select.html" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/templates/select.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +60,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.LetterappApplication.executor": "Run",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/DE30-3nd-1",
