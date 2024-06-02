@@ -33,7 +33,7 @@ public class LetterDetails {
 
     // 특정 편지의 내용을 가져오는 메서드
     @GetMapping("/letterDetails/{id}")
-    public String getLetterContentById(@PathVariable Long id, Model model) {
+    public String getLetterContentById(@PathVariable("id") Long id, Model model) {
         Letter letter = letterService.findLetterById(id);
         if (letter == null) {
             return "error"; // 편지를 찾지 못한 경우 에러 페이지로 이동
@@ -41,4 +41,6 @@ public class LetterDetails {
         model.addAttribute("letter", letter);
         return "letterContent";
     }
+
+
 }

@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0fd0c2fa-25ee-4860-977a-fcf0bd2a8cbc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/LetterTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/LetterTypeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/LetterDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/LetterDetails.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +25,12 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="letterapp" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -46,7 +52,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.LetterappApplication.executor": "Debug",
+    "Application.LetterappApplication.executor": "Run",
     "Gradle.Build letterapp.executor": "Run",
     "Gradle.letterapp.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -58,7 +64,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/DE30-3nd-1",
+    "last_opened_file_path": "C:/springstudy/project/DE30-3nd-1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
