@@ -23,7 +23,7 @@ public class UserService {
     @Autowired
     private LetterTypeRepository letterTypeRepository;
 
-    public User registerUser(String nickname, String password) {  {
+    public User registerUser(String nickname, String password) {
         User user = new User();
         user.setNickname(nickname);
         user.setPassword(passwordEncoder.encode(password));
