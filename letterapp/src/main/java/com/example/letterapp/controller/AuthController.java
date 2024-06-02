@@ -1,9 +1,10 @@
 package com.example.letterapp.controller;
 
 import com.example.letterapp.dto.UserRegisterDto;
+import com.example.letterapp.model.User;
 import com.example.letterapp.service.UserService;
-import org.springframework.security.core.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,7 +29,7 @@ public class AuthController {
 
     @PostMapping("/register")
     public String register(Model model, UserRegisterDto userRegisterDto
-                           ) {
+    ) {
         if (!userRegisterDto.getPassword().equals(userRegisterDto.getConfirmPassword())) {
             // 비밀번호 일치 error 문구 노출을 위해 수정
             model.addAttribute("passwordError", "비밀번호가 일치하지 않습니다.");
@@ -54,6 +55,4 @@ public class AuthController {
         }
         return "index";
     }
-
-
 }
