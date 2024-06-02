@@ -6,7 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="0fd0c2fa-25ee-4860-977a-fcf0bd2a8cbc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/HtmlController.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/HtmlController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/LetterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/LetterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/templates/letterContent.html" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/templates/letterContent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/templates/letters.html" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/templates/letters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/templates/select.html" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/templates/select.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/templates/write.html" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/templates/write.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
