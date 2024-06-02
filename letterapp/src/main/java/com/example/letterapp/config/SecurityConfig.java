@@ -36,7 +36,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // "/" 추가 미로그인 상태에서 이미지 로드를 위해 "/static/**", "/images/**" 추가
                         //  스웨거 사용을 위해 "/swagger-ui.html", "/swagger-ui/**"
-                        .requestMatchers("/", "/index","/register", "/login", "/css/**", "/images/**", "/static/**","/api*", "/api-docs/**", "/swagger-ui/**").permitAll()
+                        .requestMatchers("/", "/index","/count","/register", "/login", "/css/**", "/images/**", "/static/**","/api*", "/api-docs/**", "/swagger-ui/**").permitAll()
+                        .requestMatchers("//api/lettertype/want").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form

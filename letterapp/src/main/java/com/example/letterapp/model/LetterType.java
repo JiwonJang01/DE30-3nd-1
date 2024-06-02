@@ -15,9 +15,10 @@ public class LetterType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx_letterType;
 
-    @ElementCollection
-    @CollectionTable(name = "letter_type_category", joinColumns = @JoinColumn(name = "letter_type_id"))
-    @Column(name = "category")
+    //  테이블이 하나 더 생성됨
+    //@ElementCollection
+    // @CollectionTable(name = "letter_type_category", joinColumns = @JoinColumn(name = "letter_type_id"))
+    //@Column(name = "category")
     private List<Integer> category;
 
     private String comment;
