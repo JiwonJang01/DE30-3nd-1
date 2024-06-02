@@ -61,6 +61,38 @@
             font-size: 16px;
             padding: 10px;
         }
+
+        /* 추가한 스타일 */
+        .nickname-category {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        .nickname {
+            font-size: 14px;
+        }
+        .category {
+            font-size: 12px;
+            padding: 3px 6px;
+            border-radius: 3px;
+        }
+        .category-1 {
+            background-color: #ffc107;
+            color: #000;
+        }
+        .category-2 {
+            background-color: #17a2b8;
+            color: #fff;
+        }
+        .category-3 {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .category-4 {
+            background-color: #007bff;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -112,24 +144,31 @@
         fetch('/api/lettertype/want')
             .then(response => response.json())
             .then(data => {
+                // 데이터를 날짜별로 정렬합니다.
+                data.sort((a, b) => {
+                    return new Date(b.date_receive) - new Date(a.date_receive);
+                });
+
                 const letterWishList = document.getElementById('letter-wish-list');
                 data.forEach(item => {
                     if (item.comment !== null && item.comment !== "null") {
                         const listItem = document.createElement('li');
                         listItem.className = 'list-group-item';
+                        const categoryColor = getCategoryColor(item.category[0]);
                         listItem.innerHTML = `
-                            닉네임: ${item.nickname}<br>
-                            코멘트: ${item.comment}<br>
-                            카테고리: ${item.category.map(cat => {
-                                switch(cat) {
-                                    case 1: return '재밌는 얘기해 주세요';
-                                    case 2: return '위로 받고 싶어요';
-                                    case 3: return '고민 있어요 조언해 주세요';
-                                    case 4: return '아무말 대잔치';
-                                    default: return '기타';
-                                }
-                            }).join(', ')}<br>
-                            날짜: ${item.date_receive ? new Date(item.date_receive).toLocaleString() : '날짜 정보 없음'}
+                            <span style="font-size: 13px; color: ${categoryColor};">${getCategoryText(item.category[0])}</span>
+                            <span style="font-size: 13px;">  ${item.nickname}</span><br>
+
+                            ${item.comment}<br>
+                            <span style="font-size: 13px;">${item.date_receive ? new Date(new Date(item.date_receive).getTime() + (9 * 60 * 60 * 1000)).toLocaleString('ko-KR', {
+                                timeZone: 'Asia/Seoul',
+                                year: 'numeric',
+                                month: '2-digit',
+                                day: '2-digit',
+                                hour12: false,
+                                hour: '2-digit',
+                                minute: '2-digit'
+                            }) : '날짜 정보 없음'}</span>
                         `;
                         listItem.addEventListener('click', function() {
                             if (!isAuthenticated()) {
@@ -149,7 +188,28 @@
     function isAuthenticated() {
         return document.getElementById('isAuthenticated').value === 'true';
     }
+
+    function getCategoryText(category) {
+        switch(category) {
+            case 1: return '재밌는 얘기해 주세요😄';
+            case 2: return '위로 받고 싶어요😥';
+            case 3: return '고민 있어요 조언해 주세요😯';
+            case 4: return '아무말 대잔치🍟';
+            default: return '기타';
+        }
+    }
+
+    function getCategoryColor(category) {
+        switch(category) {
+            case 1: return 'blue';
+            case 2: return 'green';
+            case 3: return 'orange';
+            case 4: return 'red';
+            default: return 'black';
+        }
+    }
 </script>
+
 
 </body>
 </html>

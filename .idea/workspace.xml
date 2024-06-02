@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fd0c2fa-25ee-4860-977a-fcf0bd2a8cbc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/HtmlController.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/HtmlController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/LetterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/LetterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/java/com/example/letterapp/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/.gradle/8.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/.gradle/8.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/.gradle/8.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/.gradle/8.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/templates/letterContent.html" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/templates/letterContent.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/templates/letters.html" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/templates/letters.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/templates/select.html" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/templates/select.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/templates/write.html" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/templates/write.html" afterDir="false" />
@@ -61,6 +61,7 @@
     "Application.LetterappApplication.executor": "Run",
     "Gradle.Build letterapp.executor": "Run",
     "Gradle.letterapp.executor": "Run",
+    "JUnit.LetterappApplicationTests.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -70,7 +71,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/springstudy/project/DE30-3nd-1",
+    "last_opened_file_path": "C:/springstudy/project/배포용/letterapp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,7 +79,7 @@
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   }
@@ -93,7 +94,35 @@
       <recent name="C:\springStudy\letterapp\letterapp\src\main\resources\static\js" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.LetterappApplication">
+    <configuration name="LetterappApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.letterapp.LetterappApplication" />
+      <module name="com.example.letterapp.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.letterapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LetterappApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="com.example.letterapp.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.letterapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.letterapp" />
+      <option name="MAIN_CLASS_NAME" value="com.example.letterapp.LetterappApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LetterappApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="com.example.letterapp.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.letterapp.LetterappApplication" />
@@ -101,6 +130,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.LetterappApplication" />
+        <item itemvalue="JUnit.LetterappApplicationTests" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
