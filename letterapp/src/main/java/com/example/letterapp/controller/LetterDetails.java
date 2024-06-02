@@ -42,4 +42,3 @@ public class LetterDetails {
         return "letterContent";
     }
 }
-

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col">
+            <h3>편지 상세 내용</h3>
+            <p>
+                <strong>Title:</strong> <span th:text="${letter.title}"></span><br/>
+                <strong>Content:</strong> <span th:text="${letter.content}"></span><br/>
+                <strong>Sender:</strong> <span th:text="${letter.sender}"></span><br/>
+                <strong>Recipient:</strong> <span th:text="${letter.recipient}"></span><br/>
+<!--                <strong>Type:</strong> <span th:text="${letter.letterType.name}"></span>-->
+            </p>
+            <a th:href="@{/letterDetails}" class="btn btn-secondary">편지 목록으로 돌아가기</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

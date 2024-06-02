@@ -23,9 +23,9 @@ public class UserService {
     @Autowired
     private LetterTypeRepository letterTypeRepository;
 
-    public User registerUser(String username, String password) {
+    public User registerUser(String nickname, String password) {  {
         User user = new User();
-        user.setNickname(username);
+        user.setNickname(nickname);
         user.setPassword(passwordEncoder.encode(password));
 
         // User 엔티티 저장
@@ -47,14 +47,10 @@ public class UserService {
     public boolean isNicknameExists(String nickname) {
         return userRepository.findByNickname(nickname) != null;
     }
+  
+    public User findByNickname(String nickname) { // 메소드 이름 변경
+        return userRepository.findByNickname(nickname);
 
-//    // 닉네임 중복 확인 isNicknameExists 추가
-//    public boolean isNicknameExists(String nickname) {
-//        return userRepository.findByNickname(nickname) != null;
-//    }
-
-    public User findByUsername(String username) {
-        return userRepository.findByNickname(username);
     }
 
     public User getUserById(Long id) {
@@ -66,8 +62,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    //편지 상세
-    public String getNicknameByUsername(String nickname) {
+    public String getNicknameByNickname(String nickname) { // 메소드 이름을 더 명확하게
         User user = userRepository.findByNickname(nickname);
         return user != null ? user.getNickname() : null;
     }
