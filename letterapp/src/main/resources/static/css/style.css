@@ -58,3 +58,53 @@ a {
     text-align: center; /* 가로 정렬 */
     vertical-align: middle; /* 세로 정렬 */
 }
+
+
+.btn-custom {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: none;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom.btn-blue {
+    background-color: #4895ef;
+    color: white;
+}
+
+.btn-custom.btn-green {
+    background-color: #4361ee;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+}
+
+.text-muted {
+    color: #6c757d;
+    font-size: 13px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; /* 버튼 사이 간격 */
+}
+
+/* 반응형 디자인: 화면 크기가 768px 이하일 때 */
+@media (max-width: 768px) {
+    .btn-group {
+        flex-direction: column;
+    }
+    .btn-custom {
+        width: 100%;
+    }
+}
