@@ -7,8 +7,7 @@
     <list default="true" id="0fd0c2fa-25ee-4860-977a-fcf0bd2a8cbc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letterapp/src/main/resources/templates/select.html" beforeDir="false" afterPath="$PROJECT_DIR$/letterapp/src/main/resources/templates/select.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
