@@ -43,12 +43,13 @@ public class LetterController {
 
     @Operation(summary = "Send a new letter")
     @PostMapping("/send")
-    public String sendLetter(@RequestParam String title,
-                             @RequestParam String content,
-                             @RequestParam String sender,
-                             @RequestParam String recipient,
-                             @RequestParam Long letterTypeId,
-                             Model model) {
+    public String sendLetter(
+            @RequestParam(name = "title") String title,
+            @RequestParam(name = "content") String content,
+            @RequestParam(name = "sender") String sender,
+            @RequestParam(name = "recipient") String recipient,
+            @RequestParam(name = "letterTypeId") Long letterTypeId,
+            Model model) {
         Letter letter = new Letter();
         letter.setTitle(title);
         letter.setContent(content);
