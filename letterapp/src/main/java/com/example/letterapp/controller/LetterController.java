@@ -58,7 +58,7 @@ public class LetterController {
         letter.setLetterType(letterTypeService.findLetterTypeById(letterTypeId));
         letterService.saveLetter(letter);
         model.addAttribute("status", "편지가 성공적으로 전송되었습니다");
-        return "redirect:/letters";
+        return "redirect:/";
     }
 
 //    // t실행 성공
