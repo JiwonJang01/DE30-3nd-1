@@ -38,6 +38,7 @@ public class SecurityConfig {
                         //  스웨거 사용을 위해 "/swagger-ui.html", "/swagger-ui/**"
                         .requestMatchers("/register", "/login", "/css/**").permitAll()
                         .requestMatchers("/count").permitAll()
+                        .requestMatchers("//api/lettertype/want").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form

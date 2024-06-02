@@ -119,7 +119,9 @@ public class LetterTypeController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); // 500 Internal Server Error
         }
     }
-
+/*
+ * 요청편지 리스트
+ */
     @GetMapping("/want")
     public List<Map<String, Object>> getAllLetterTypesWithUserDetails() {
         return letterTypeService.getAllLetterTypesWithUserDetails();
