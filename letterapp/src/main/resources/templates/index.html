@@ -24,7 +24,6 @@
             <img src="/images/letter.png" alt="편지 아이콘" class="letter-icon">
             <h3>Welcome, <span th:text="${#authentication.name}"></span>!</h3>
             <h3>지금까지 <span th:if="${totalLetters == 0}">편지를 전달한 적이 없어요😊</span><span th:if="${totalLetters > 0}" th:text="${totalLetters} + '개'"></span> 편지를 전달했어요😊</h3>
-
         </div>
     </div>
     <div class="row mt-4">
@@ -41,9 +40,10 @@
             <h3>Recent Letters</h3>
             <div th:each="letter : ${letters}">
                 <p>
-                    <strong>Type:</strong> <span th:text="${letter.type}"></span><br/>
+<!--                    <strong>Type:</strong> <span th:text="${letter.letterType}"></span><br/>-->
                     <strong>Comment:</strong> <span th:text="${letter.comment}"></span><br/>
-                    <strong>Content:</strong> <span th:text="${letter.content}"></span>
+                    <strong>Content:</strong> <span th:text="${letter.content}"></span><br/>
+                    <a th:href="@{/letters/{id}(id=${letter.id})}" class="btn btn-primary">자세히 보기</a>
                 </p>
             </div>
         </div>

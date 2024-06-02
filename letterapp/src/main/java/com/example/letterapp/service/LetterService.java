@@ -30,9 +30,19 @@ public class LetterService {
         return letterRepository.findById(id).orElse(null);
     }
 
-    public LetterType findLetterTypeById(Long id) {
-        return letterTypeRepository.findById(id).orElse(null);
+    // 추가
+    public List<Letter> findLettersByRecipient(String recipient) {
+        return letterRepository.findByRecipient(recipient);
     }
+
+    // 사용자 ID로 편지 조회하는 메서드 추가
+    public List<Letter> findLettersByUserId(Long userId) {
+        return letterRepository.findLettersByUserId(userId);
+    }
+
+//    public LetterType findLetterTypeById(Long id) {
+//        return letterTypeRepository.findById(id).orElse(null);
+//    }
 
     public List<LetterType> findAllLetterTypes() {
         return letterTypeRepository.findAll();

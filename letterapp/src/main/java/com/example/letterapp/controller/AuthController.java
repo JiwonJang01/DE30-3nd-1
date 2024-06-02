@@ -1,6 +1,7 @@
 package com.example.letterapp.controller;
 
 import com.example.letterapp.dto.UserRegisterDto;
+import com.example.letterapp.service.LetterService;
 import com.example.letterapp.service.UserService;
 import org.springframework.security.core.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,9 @@ public class AuthController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private LetterService letterService;
 
     @GetMapping("/login")
     public String login() {
@@ -46,12 +50,17 @@ public class AuthController {
     }
 
     // /맵핑 및 인증 여부를 모델에 전달하여 화면에서 이를 사용할 수 있도록 수정
+    // 홈에서 바로 건수 확인할 수 있도록 수정
+    // AuthController
     @GetMapping("/")
     public String index(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null && authentication.isAuthenticated() && !"anonymousUser".equals(authentication.getPrincipal())) {
             model.addAttribute("username", authentication.getName());
         }
+        // 전체 편지 수를 모델에 추가하는 로직을 여기에 추가하실 수도 있습니다.
+        long totalLetters = letterService.countLetters();
+        model.addAttribute("totalLetters", totalLetters);
         return "index";
     }
 

@@ -16,9 +16,9 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public User registerUser(String username, String password) {
+    public User registerUser(String nickname, String password) { // 매개변수 이름 변경
         User user = new User();
-        user.setNickname(username);
+        user.setNickname(nickname);
         user.setPassword(passwordEncoder.encode(password));
         return userRepository.save(user);
     }
@@ -28,8 +28,8 @@ public class UserService {
         return userRepository.findByNickname(nickname) != null;
     }
 
-    public User findByUsername(String username) {
-        return userRepository.findByNickname(username);
+    public User findByNickname(String nickname) { // 메소드 이름 변경
+        return userRepository.findByNickname(nickname);
     }
 
     public User getUserById(Long id) {
@@ -41,8 +41,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    //편지 상세
-    public String getNicknameByUsername(String nickname) {
+    public String getNicknameByNickname(String nickname) { // 메소드 이름을 더 명확하게
         User user = userRepository.findByNickname(nickname);
         return user != null ? user.getNickname() : null;
     }
