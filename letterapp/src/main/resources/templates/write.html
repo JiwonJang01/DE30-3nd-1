@@ -9,6 +9,7 @@
 </head>
 <body>
 <div class="container">
+    <h1 class="mt-5 mb-4">편지 쓰기</h1>
     <div class="row mt-4">
         <div class="col">
             <!-- 클릭한 편지희망 리스트의 내용을 여기에 표시 -->
@@ -56,23 +57,35 @@
         const selectedLetter = JSON.parse(sessionStorage.getItem('selectedLetter'));
         if (selectedLetter) {
             const wishLetterContent = document.getElementById('wish-letter-content');
+            const categoryColor = getCategoryColor(selectedLetter.category[0])
             wishLetterContent.innerHTML = `
-                닉네임: ${selectedLetter.nickname}<br>
-                코멘트: ${selectedLetter.comment}<br>
-                카테고리: ${selectedLetter.category.map(cat => {
-                    switch(cat) {
-                        case 1: return '재밌는 얘기해 주세요';
-                        case 2: return '위로 받고 싶어요';
-                        case 3: return '고민 있어요 조언해 주세요';
-                        case 4: return '아무말 대잔치';
-                        default: return '기타';
-                    }
-                }).join(', ')}<br>
-                날짜: ${selectedLetter.date_receive ? new Date(selectedLetter.date_receive).toLocaleString() : '날짜 정보 없음'}
-            `;
+                            <span style="font-size: 13px; color: ${categoryColor};">${getCategoryText(selectedLetter.category[0])}</span>
+                            <span style="font-size: 13px;">  ${selectedLetter.nickname}</span><br>
+                            ${selectedLetter.comment}<br>
+                        `;
             document.getElementById('letterTypeId').value = selectedLetter.idx_letterType;
         }
     });
+
+    function getCategoryText(category) {
+        switch(category) {
+            case 1: return '재밌는 얘기해 주세요😄';
+            case 2: return '위로 받고 싶어요😥';
+            case 3: return '고민 있어요 조언해 주세요😯';
+            case 4: return '아무말 대잔치🍟';
+            default: return '기타';
+        }
+    }
+
+    function getCategoryColor(category) {
+        switch(category) {
+            case 1: return 'blue';
+            case 2: return 'green';
+            case 3: return 'orange';
+            case 4: return 'red';
+            default: return 'black';
+        }
+    }
 </script>
 
 </body>
