@@ -2,6 +2,8 @@
 
 ![image](https://github.com/pladata-encore/DE30-3nd-1/assets/161932948/f44cf47d-0dd7-40e0-a888-ad5ee832f690)
 
+#### 프로젝트 기간
+- 24.05.30 ~ 24.05.31
 
 ## 툴
 
