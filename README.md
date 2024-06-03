@@ -229,7 +229,7 @@ public interface LetterRepository extends JpaRepository<Letter, Long> {
 ## 편지작성
 
 최은서
-- 편지 작성 페이지지
+- 편지 작성 페이지
 
 
 ### Letter 엔터티 설정
