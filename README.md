@@ -28,14 +28,13 @@
 
 ## 목차
 
-[프로젝트 개요](https://github.com/pladata-encore/DE30-3nd-1/edit/main/README.md#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B0%9C%EC%9A%94)
+[프로젝트 개요](https://github.com/pladata-encore/DE30-3nd-1/tree/main?tab=readme-ov-file#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B0%9C%EC%9A%94)
 
-[백엔드](https://github.com/pladata-encore/DE30-2nd-5/blob/main/README.md#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A7%91)
+[백엔드](https://github.com/pladata-encore/DE30-3nd-1/tree/main?tab=readme-ov-file#%EB%B0%B1%EC%97%94%EB%93%9C-1)
 
-[프론트
-](https://github.com/pladata-encore/DE30-2nd-5/blob/main/README.md#%EB%AA%A8%EB%8D%B8%EB%A7%81)
+[프론트](https://github.com/pladata-encore/DE30-3nd-1/tree/main?tab=readme-ov-file#%ED%94%84%EB%A1%A0%ED%8A%B8-1)
 
-[배포](https://github.com/pladata-encore/DE30-2nd-5/blob/main/README.md#%EB%AA%A8%EB%8D%B8%EB%A7%81)
+[배포](https://github.com/pladata-encore/DE30-3nd-1/tree/main?tab=readme-ov-file#%EB%B0%B0%ED%8F%AC)
 
 ##  Members 
 - 윤소영 
