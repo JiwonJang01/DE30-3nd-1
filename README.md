@@ -511,12 +511,121 @@ long count();
 데이터베이스에 저장된 전체 편지의 수를 계산하여 반환합니다. 
 
 
-
-
-
-
 <br>
 <br>
+
+#### 장지원
+
+### 홈화면에 전체 편지 건수 카운트 - get
+Letter 테이블을 전체의 행 수를 가져오는 api입니다.
+로그인 전후 화면 상단에서 '지금까지 N건의 편지를 전달했어요' 부분에서 확인할 수 있습니다.
+
+```JAVA
+@GetMapping("/count")
+    public Map<String, Long> getLetterCount() {
+        long count = letterCountService.countLetters();
+        Map<String, Long> response = new HashMap<>();
+        response.put("count", count);
+        return response;
+    }
+```
+![](https://velog.velcdn.com/images/jiw0707/post/acca43a3-e681-4cee-a349-e27bdb482ec6/image.png)
+
+## 받고 싶은 편지 설정(LetterType)
+
+### LetterType 테이블
+LetterType 테이블을 사용자가 요청한 편지의 정보를 저장하는 테이블입니다. idx_user컬럼을 통해서 user테이블과 매핑하여 사용자 별로 다른 데이터를 가질 수 있게 하였습니다.
+해당 테이블은 정보를 저장할 때마다 갱신되는 테이블입니다. 따라서 새로운 요청 편지가 저장되면 이전의 요청 편지는 사라집니다.
+![](https://velog.velcdn.com/images/jiw0707/post/a92337a4-3221-48d6-9c38-f37efeb326b0/image.png)
+
+### 요청 편지 리스트
+'받고 싶은 편지 선택하기'에서 저장한 편지들의 리스트를 만들기위해 전체 LetterType 테이블의 정보를 가져옵니다. 해당 리스트는 로그인 전후 화면에서 확인할 수 있습니다.
+```JAVA
+@GetMapping("/want")
+    public List<Map<String, Object>> getAllLetterTypesWithUserDetails() {
+        return letterTypeService.getAllLetterTypesWithUserDetails();
+    }
+```
+![](https://velog.velcdn.com/images/jiw0707/post/65b57732-fe5c-4f21-a9ee-8a3f997f5334/image.png)
+
+### 사용자의 이메일 전송 여부, 랜덤여부 확인
+user테이블에서 이메일 전송 여부와 이메일 주소, 랜덤 편지 수신여부에 대한 정보를 가져옵니다.
+```JAVA
+@GetMapping("/user/{idx_user}/select")
+    public User getUserSelect(@PathVariable("idx_user") Long idx_user) {
+        return userService.getUserById(idx_user);
+    }
+```
+![](https://velog.velcdn.com/images/jiw0707/post/871eae78-87f8-4cbf-9875-c0f8275b9545/image.png)
+
+
+
+### 사용자의 편지 유형 선택 정보
+사용자가 선택한 편지 유형과 저장된 코멘트를 가져옵니다. 이 정보는 사용자 별로 다른 정보를 가진 화면을 보여주어야 하기 때문에 user테이블의 정보도 필요합니다.
+```JAVA
+@GetMapping("/user/{idx_user}/lettertype")
+    public List<LetterType> getLetterTypesForUser
+            (@PathVariable("idx_user") Long idx_user) {
+        return letterTypeService.getLetterTypesForUser(idx_user);
+    }
+```
+![](https://velog.velcdn.com/images/jiw0707/post/77da2c5d-be8e-4d7a-bf04-696e1e23b776/image.png)
+
+
+
+### 받고 싶은 편지 선택하기 정보 변경
+입력 화면에서 내용을 변경한 후 저장하기 버튼을 클릭하면 유저의 이메일 수신 여부, 이메일 주소, 랜덤 편지 수신 여부와 편지 유형 선호도를 업데이트 합니다.
+```JAVA
+@PatchMapping("/change/{letterTypeId}")
+    public ResponseEntity<LetterType> updateLetterType(@PathVariable("letterTypeId") Long letterTypeId, @RequestBody LetterTypeDto letterTypeDto) {
+        try {
+            // 주어진 letterTypeId로 LetterType 엔티티를 가져옴
+            Optional<LetterType> optionalLetterType = letterTypeService.getLetterTypeById(letterTypeId);
+
+            // letterTypeId에 해당하는 LetterType이 없는 경우
+            if (!optionalLetterType.isPresent()) {
+                return ResponseEntity.notFound().build(); // 404 Not Found
+            }
+
+            LetterType letterType = optionalLetterType.get();
+
+            // User 엔티티도 업데이트
+            User user = userService.getUserById(letterTypeDto.getUserIdx());
+            if (user == null) {
+                return ResponseEntity.badRequest().body(null); // User가 없을 경우 예외 처리
+            }
+            user.setEmail_sub(letterTypeDto.isEmailSub());
+            user.setEmail(letterTypeDto.getEmail());
+            user.setRandom_sub(letterTypeDto.isRandomSub());
+
+            // User 엔티티 저장
+            userService.saveUser(user);
+
+            // LetterTypeDto에서 필요한 필드로 LetterType 엔티티를 업데이트
+            if (letterTypeDto.getCategory() != null) {
+                letterType.setCategory(letterTypeDto.getCategory());
+            }
+            if (letterTypeDto.getComment() != null) {
+                letterType.setComment(letterTypeDto.getComment());
+            }
+            if (letterTypeDto.getDateRecieve() != null) {
+                letterType.setDate_recieve(letterTypeDto.getDateRecieve());
+            }
+
+            // LetterType 엔티티 저장
+            LetterType updatedLetterType = letterTypeService.saveLetterType(letterType);
+
+            // 업데이트된 성공시 반환
+            return ResponseEntity.ok(updatedLetterType); // 200 OK
+        } catch (Exception e) { // 업데이트된 실패시 반환
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); // 500 Internal Server Error
+        }
+    }
+```
+![](https://velog.velcdn.com/images/jiw0707/post/43f87f3e-6d20-4ba5-ad9a-c868f9a05e0e/image.png)
+
+</br>
+</br>
 
 ## Swagger 연동
 #### 윤소영
