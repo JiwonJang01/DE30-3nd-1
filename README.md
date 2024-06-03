@@ -1,8 +1,6 @@
 # 편지가 도착했습니다
 
-
-<br />
-
+![](https://velog.velcdn.com/images/devysy55/post/d9322d56-34ae-41b9-8a06-ca71a931510b/image.png)
 
 ## 툴
 
@@ -25,11 +23,19 @@
 <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white" />  
 
 
-
 ### 작업툴
 <img src="https://img.shields.io/badge/IntelliJ_IDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white" />  
 
 ## 목차
+
+[프로젝트 개요](https://github.com/pladata-encore/DE30-3nd-1/edit/main/README.md#%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B0%9C%EC%9A%94)
+
+[백엔드](https://github.com/pladata-encore/DE30-2nd-5/blob/main/README.md#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A7%91)
+
+[프론트
+](https://github.com/pladata-encore/DE30-2nd-5/blob/main/README.md#%EB%AA%A8%EB%8D%B8%EB%A7%81)
+
+[배포](https://github.com/pladata-encore/DE30-2nd-5/blob/main/README.md#%EB%AA%A8%EB%8D%B8%EB%A7%81)
 
 ##  Members 
 - 윤소영 
@@ -84,14 +90,22 @@
 
 # 백엔드
 
+<br>
 
+## 백엔드 여러분 여기다 넣어줘요
+
+
+<br>
+<br>
 
 ## Swagger 연동
 #### 윤소영
 - SpringDoc OpenAPI Starter WebMVC UI 사용하여 Swagger 연동
+
 ```
 implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
 ````
+
 <img src='https://velog.velcdn.com/images/devysy55/post/e907c885-55f2-4fc8-9720-1c2f9b7bc3c3/image.png' width=600px></img>
 
 ## 프론트 작업 과정에서 api추가 작업
@@ -99,6 +113,7 @@ implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
 ### @GetMapping("/api/user/idx")
 - 받고 싶은 편지 선택하기 화면 제작 중 resquest 값에 로그인 한 회원의 idx 정보 필요한 이슈 발생
 - UserController
+
 ```
  public UserController(UserService userService) {
         this.userService = userService;
@@ -115,12 +130,12 @@ implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
         }
         return null; // 사용자가 로그인하지 않았거나 사용자를 찾을 수 없는 경우
     }
-  ```
+```
   
 ## @GetMapping("/letters")
 - 받은 편지함 작업 중 회원별 받은 편지 조회 api 추가
 - LetterController
-  ```
+```
   @Operation(summary = "로그인 회원의 받은 편지 조회")
     @GetMapping("/letters")
     public String showLettersPage(@AuthenticationPrincipal UserDetails userDetails, Model model) {
@@ -133,24 +148,30 @@ implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
         }
         return "letters";
     }
- ```
+```
+
 - LetterService
- ```
+```
 public List<Letter> findLettersByUserId(Long userId) {
         return letterRepository.findLettersByUserId(userId);
     }
- ```
+```
+
 - LetterRepository
- 
- ```
+```
  @Query("SELECT l FROM Letter l JOIN l.letterType lt WHERE lt.user.idx_user = :userId")
     List<Letter> findLettersByUserId(@Param("userId") Long userId);
- ```
+```
 
 
   
 # 프론트
 - HTML, CSS, JavaScript, 그리고 Thymeleaf 템플릿 엔진을 사용하여 구현
+
+## 제윤언니꺼 여기다가...
+### 정제윤
+
+
 
 ## 홈, 편지함, 받고싶은 편지 선택, 편지쓰기 화면 제작 및 api연동
 ### 윤소영
@@ -242,6 +263,7 @@ public List<Letter> findLettersByUserId(Long userId) {
 - 에러 처리 추가
   - 서버와의 통신이 실패할 경우 사용자에게 적절한 오류 메시지를 표시하도록 에러 처리
   
+<br> 
   
 # 배포
 - https://cloudtype.io/ 활용 서버 배포(무료 버전 사용)
