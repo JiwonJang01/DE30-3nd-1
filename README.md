@@ -1,6 +1,7 @@
 # 편지가 도착했습니다
 
-![](https://velog.velcdn.com/images/devysy55/post/d9322d56-34ae-41b9-8a06-ca71a931510b/image.png)
+![image](https://github.com/pladata-encore/DE30-3nd-1/assets/161932948/f44cf47d-0dd7-40e0-a888-ad5ee832f690)
+
 
 ## 툴
 
@@ -95,7 +96,7 @@
 
 
 ## 로그인 및 회원가입
-곽태호
+####곽태호
 - 로그인 및 회원가입 화면
 - 편지 상세 내용
 
@@ -225,6 +226,8 @@ public interface LetterRepository extends JpaRepository<Letter, Long> {
 - 때문에 문제가 있음에도 불구하고 정상적으로 작동하여 배포 시 문제가 발생할 수 있다.
 - 동적으로 쿼리 언어를 작성하는 데 효율적이지 못하다.
 
+<br>
+<br>
 
 ## 편지작성
 
@@ -695,7 +698,8 @@ public List<Letter> findLettersByUserId(Long userId) {
     List<Letter> findLettersByUserId(@Param("userId") Long userId);
 ```
 
-
+<br>
+<br>
   
 # 프론트
 - HTML, CSS, JavaScript, 그리고 Thymeleaf 템플릿 엔진을 사용하여 구현
