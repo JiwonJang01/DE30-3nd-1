@@ -95,7 +95,7 @@
 
 
 ## 로그인 및 회원가입
-####곽태호
+#### 곽태호
 - 로그인 및 회원가입 화면
 - 편지 상세 내용
 
@@ -230,7 +230,7 @@ public interface LetterRepository extends JpaRepository<Letter, Long> {
 
 ## 편지작성
 
-최은서
+#### 최은서
 - 편지 작성 페이지
 
 
@@ -704,7 +704,7 @@ public List<Letter> findLettersByUserId(Long userId) {
 - HTML, CSS, JavaScript, 그리고 Thymeleaf 템플릿 엔진을 사용하여 구현
 
 ## 로그인 및 회원가입 화면 style 설정하기
-### 정제윤
+#### 정제윤
 
 ```
 <style>
@@ -835,7 +835,7 @@ input.nickname::placeholder, input.password::placeholder {
 
 
 ## 홈, 편지함, 받고싶은 편지 선택, 편지쓰기 화면 제작 및 api연동
-### 윤소영
+#### 윤소영
 ### 주요 작업 사항
 - 부트스트랩, 커스텀css활용하여 디자인 적용
 - JavaScript 사용하여 서버로부터 편지 희망 등 데이터를 동적으로 가져옴
