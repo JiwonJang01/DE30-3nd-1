@@ -94,6 +94,138 @@
 ## 백엔드 여러분 여기다 넣어줘요
 
 
+
+곽태호
+- 로그인 및 회원가입 화면
+- 편지 상세 내용
+
+
+### 로그인/회원가입: spring security 사용
+
+## spring security
+- Spring 기반 애플리케이션의 보안을 담당하는 프레임 워크
+- 인증과 권한에 대해 Filter 흐름에 따라 처리하고 있으며 보안과 관련해서 많은 옵션을 제공해주고 있기 때문에 개발자가 일일이 보안 로직을 작성하지 않아도 된다는 장점이 있다.
+
+### spring security 인증 처리 과정
+![](https://velog.velcdn.com/images/taehokk/post/0006457b-24df-412c-875e-49980de8bb1d/image.png)
+1 사용자가 폼에 아이디, 패스워드를 입력하면 HTTPServletRequest에 아이디, 비밀번호 정보가 전달. 이때 AuthenticationFilter가 넘어온 아이디와 비밀번호의 유효성 검사를 실시한다.
+
+2 유효성 검사 후 실제 구현체인 UsernamePasswordAuthenticationToken을 만들어 넘겨준다.
+
+3 인증용 객체인 UsernamePasswordAuthenticationToken을 AuthenticationManager에게 전달한다.
+
+4 UsernamePasswordAuthenticationToken을 AuthenticationProvider에게 전달한다.
+
+5 사용자 아이디를 UserDetailsService로 보냅니다. UserDetailService는 사용자 아이디로 찾은 사용자의 정보를 UserDetails 객체로 만들어 AuthenticationProvider에게 전달한다.
+
+6 DB에 있는 사용자 정보를 가져온다.
+
+7 입력 정보와 UserDetails의 정보를 비교해 실제 인증 처리를 진행한다.
+
+8~ 10까지 인증이 완료되면 SecurityContextHolder에 Authentication을 저장한다.
+인증 성공 여부에 따라 성공 시 AuthenticationSuccessHandler, 실패 시 AuthenticationFailureHandler 핸들러를 실행한다.
+
+[출처](https://velog.io/@dh1010a/Spring-Spring-Security%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EA%B5%AC%ED%98%84-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-3.X-%EB%B2%84%EC%A0%84-1)
+
+
+
+
+### 구성
+Authentication
+- 인증은 사용자의 신원을 확인하는 과정으로, 사용자가 제공한 자격 증명(예: 아이디와 비밀번호)을 검증하여 사용자를 식별한다. 
+- Spring Security는 다양한 인증 방식을 지원하며, 사용자 정보를 데이터베이스, LDAP 서버, 메모리 등 다양한 소스에서 가져올 수 있다.
+
+Authorization
+- 인가는 인증된 사용자에게 특정 리소스 또는 기능에 대한 액세스 권한을 부여하는 과정이다. 
+- Spring Security는 세분화된 권한 관리를 지원하여, 역할 기반의 접근 제어를 구현할 수 있다. 
+- 이를 통해 애플리케이션의 리소스에 대한 접근 제한을 설정할 수 있다.
+
+
+
+
+### 순환 참조 문제 발생
+
+#### 순환 참조
+- 순환 참조는 두 개 이상의 빈이 서로를 의존하는 상황을 말한다.
+- 예를 들어, 클래스 A가 클래스 B를 의존하고, 클래스 B가 다시 클래스 A를 의존할 때 순환 참조가 발생한다. 이런 경우, Spring 컨테이너는 어느 빈을 먼저 생성해야 할지 결정하지 못해 순환 참조 예외를 발생한다.
+
+
+#### 해결
+- 기본적으로 Spring Boot 2.6 이상에서는 순환 참조가 허용되지 않는게 default값이다.
+- 이를 spring.main.allow-circular-references=true 설정하여 순환 참조를 허용한다.
+- 하지만 이는 일시적인 해결법으로 나중에 근본적으로 해결하기 위해 설계 구성을 변경해야한다.
+
+---
+
+## 편지 상세 내용
+
+#### controller 코드
+```
+@GetMapping("/letterDetails/{id}")
+public String getLetterContentById(@PathVariable("id") Long id, Model model) {
+    Letter letter = letterService.findLetterById(id);
+    if (letter == null) {
+        return "error"; 
+    model.addAttribute("letter", letter);
+    return "letterContent";
+}
+```
+
+- letterService.findLetterById(id): id에 해당하는 편지를 데이터베이스에서 조회한다
+
+- model.addAttribute("letter", letter): letter 객체를 모델에 추가하여 뷰에서 접근할 수 있도록 한다
+
+- /letterDetails/{id}의 id는 편지의 식별자
+
+- 편지를 찾지 못한 경우 error 페이지로 이동
+
+
+#### service 코드
+```
+    public String getLetterContentById(Long id) {
+        Letter letter = letterRepository.findById(id).orElse(null);
+        if (letter == null) {
+            return null; 
+        }
+        return letter.getContent();
+    }
+```
+
+
+- letterRepository.findById(id): id에 해당하는 편지를 데이터베이스에서 조회한다.
+- .orElse(null): Optional 객체에 값이 존재하면 그 값을 반환하고, 값이 존재하지 않으면 null을 반환한다.
+
+
+#### repository 코드
+```
+public interface LetterRepository extends JpaRepository<Letter, Long> {
+    List<Letter> findByRecipient(String recipient);
+
+    @Query("SELECT l FROM Letter l JOIN l.letterType lt WHERE lt.user.idx_user = :userId")
+    List<Letter> findLettersByUserId(@Param("userId") Long userId);
+}
+```
+
+- extends JpaRepository: JpaRepository를 확장하여 기본적인 CRUD 기능을 상속받으며, 추가로 사용자 정의 쿼리를 정의할 수 있다.
+
+- JPQL(Java Persistence Query Language)을 사용하여 커스텀 쿼리를 정의한다.
+- @Query: Letter 엔티티와 연관된 letterType 엔티티를 조인하고, userId가 일치하는 Letter 목록을 검색gksek.
+- @Param 어노테이션: userId를 쿼리 매개변수로 사용한다.
+
+
+#### JPQL
+특징
+- jpa에서 sql을 추상화한 JPQL이라는 객체 지향 쿼리 언어를 제공한다.
+- sql처럼테이블을 대상으로 쿼리 하는 것이 아닌 엔티티 객체를 대상으로 쿼리한다.
+- sql 문법과 매우 유사하다.
+
+문제점
+- JPQL은 기본 문자열로 작성되기 때문에 컴파일 시 에러를 발생하지 않는다.
+- 때문에 문제가 있음에도 불구하고 정상적으로 작동하여 배포 시 문제가 발생할 수 있다.
+- 동적으로 쿼리 언어를 작성하는 데 효율적이지 못하다.
+
+
+
 <br>
 <br>
 
