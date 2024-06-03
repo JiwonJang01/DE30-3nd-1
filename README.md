@@ -56,6 +56,7 @@
 ### 서비스 시연
 ![](https://velog.velcdn.com/images/devysy55/post/025a9adb-86cb-4501-95e4-6bc474fecd7c/image.gif)
 
+[서비스 주소](https://port-0-letter-ss7z32llwxgow5b.sel5.cloudtype.app/)
 
 
 ## 💻 프로젝트 구조
@@ -73,7 +74,7 @@
 ![](https://velog.velcdn.com/images/devysy55/post/4d0fe97b-f954-46bc-a859-e11c63cd3a51/image.png)
 
 - [figma 바로가기 링크](https://www.figma.com/design/DH4LJTcuM0VVW1bMyVEYxG/3%EC%B0%A8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?node-id=0-1&t=YUL0zFJ7tUl3oPJV-1)
-- description까지 작성한 화면설계서 작성하여 협업
+- description까지 작성한 화면설계서 활용하여 기획 및 협업
 <img src='https://velog.velcdn.com/images/devysy55/post/07f4d997-c9c8-4486-bf9c-534d3adabf98/image.png' width=800px></img>
 
 
@@ -84,15 +85,13 @@
 
 ![](https://velog.velcdn.com/images/devysy55/post/99bcae97-0212-4f51-9f53-6df85adb6ff6/image.png)
 
-- 기획 단계 이후 DB, api 개발을 위해   DB 설계서, API 명세서
+- DB, api 개발을 위해 DB 설계서, API 명세서 작성
 
 
 
 # 백엔드
 
 <br>
-
-## 백엔드 여러분 여기다 넣어줘요
 
 
 ## 로그인 및 회원가입
