@@ -167,8 +167,134 @@ public List<Letter> findLettersByUserId(Long userId) {
 # 프론트
 - HTML, CSS, JavaScript, 그리고 Thymeleaf 템플릿 엔진을 사용하여 구현
 
-## 제윤언니꺼 여기다가...
+## 로그인 및 회원가입 화면 style 설정하기
 ### 정제윤
+
+```
+<style>
+        table {
+            width: 280px;
+            height: 300px;
+            margin: auto;
+            font-size: 15px;
+            border-collapse: collapse;
+        }
+        input[type="text"].nickname {
+            width: 250px;
+            height: 32px;
+            font-size: 15px;
+            border: 0;
+            border-radius: 15px;
+            outline: none;
+            padding-left: 10px;
+            background-color: rgb(233,233,233);
+        }
+</style>
+```
+
+1. 로그인 및 회원가입 화면의 전체 테이블 크기 지정 및 옵션 설정하기
+2. 로그인 및 회원가입 화면에 표시될 항목별로 클래스 설정하여 적용할 디자인 및 옵션 설정하기
+
+<br/>
+
+```
+<body>
+<form th:action="@{/login}" method="post">
+    <table>
+        <tr>
+            <td class="center-text"><h2>로그인</h2></td> <!-- 가운데 정렬 클래스 추가 -->
+        </tr>
+        <tr>
+            <td>닉네임</td>
+        </tr>
+        <tr>
+            <td><input type="text" class="nickname" placeholder=" 닉네임을 입력해주세요" th:name="username" required></td>
+        </tr>
+    </table>
+</body>
+```
+
+1. style에 설정한 옵션 및 클래스 지정하여 로그인 회원가입 화면에 구현할 내용 body에 코드 작성하기
+2. Thymeleaf 속성 적용할 부분 표기하기 ('th:', '@{/}')
+<br/>
+
+### CSS
+
+```
+.login {
+    width: 280px;
+    height: 300px;
+    margin: auto;
+    font-size: 15px;
+    border-collapse: collapse;
+    margin: auto;
+}
+input[type="text"].nickname, input[type="password"].password {
+    width: 250px;
+    height: 32px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233,233,233);
+}
+input.nickname::placeholder, input.password::placeholder {
+    font-size: 12px;
+}
+```
+
+1. CSS폴더를 생성하여 반복적으로 적용되는 디자인 패턴을 CSS 파일에 클래스별로 저장하기
+2. 추가적으로 적용할 디자인 및 옵션을 클래스 형태로 CSS파일에 작성하기
+
+<br/>
+
+```
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
+</head>
+```
+
+1. head에 CSS파일 경로 설정하기
+2. Thymeleaf 속성 적용하여 CSS파일 연결하기
+<br/>
+
+```
+<body>
+<form th:action="@{/login}" method="post">
+    <table class = "login">
+        <tr>
+            <td class="center-text"><h2>로그인</h2></td>
+        </tr>
+        <tr>
+            <td>닉네임</td>
+        </tr>
+        <tr>
+            <td><input type="text" class="nickname" placeholder=" 닉네임을 입력해주세요" th:name="username" required></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+        </tr>
+        <tr>
+            <td><input type="password" class="password" placeholder=" 비밀번호를 입력해주세요" th:name="password" required></td>
+        </tr>
+        <tr>
+            <td><button type="submit" class="btn">로그인하기</button></td>
+        </tr>
+        <tr>
+            <td class="join"><a th:href="@{/register}">회원가입</a></td>
+        </tr>
+    </table>
+</form>
+</body>
+```
+
+1. CSS에 작성한 테이블 적용하여 로그인 회원가입 화면에 구현할 내용 body에 코드 작성하기
+<br/>
+
 
 
 
