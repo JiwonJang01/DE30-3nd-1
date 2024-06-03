@@ -226,6 +226,294 @@ public interface LetterRepository extends JpaRepository<Letter, Long> {
 - 동적으로 쿼리 언어를 작성하는 데 효율적이지 못하다.
 
 
+## 편지작성
+
+최은서
+- 편지 작성 페이지지
+
+
+### Letter 엔터티 설정
+
+[코드]
+
+```
+package com.example.letterapp.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+public class Letter {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String title;
+    private String content;
+    private String sender;
+    private String recipient;
+
+    @ManyToOne
+    private LetterType letterType;
+
+    }
+    
+ ```
+<Letter-받는 편지>		
+
+전송되는 (답장)편지들에 해당됩니다. 작성 즉시 저장되고, 누적됩니다. 
+![](https://velog.velcdn.com/images/eschoi2402/post/ea43e24c-7122-4ae0-bc99-d0093ad623b5/image.png)
+
+Entity: 이 클래스가 JPA 엔티티임을 나타냅니다. 데이터베이스 테이블에 매핑됩니다.
+
+@Getter와 @Setter: Lombok 라이브러리를 사용하여 자동으로 getter와 setter 메서드를 생성합니다.
+
+@Id: 필드가 엔티티의 기본 키(primary key)임을 나타냅니다.
+@GeneratedValue(strategy = GenerationType.IDENTITY): 기본 키 생성을 데이터베이스에 위임합니다. 
+
+private Long id; : 편지의 고유 식별자(Primary Key)
+private String title; : 편지의 제목
+private String content; : 편지의 내용
+private String sender; : 발신자
+private String recipient; : 수신자
+
+LetterType 엔터티와 다대일 관계를 설정했습니다. 즉, 여러 편지가 하나의 LetterType을 가질 수 있습니다.
+
+![](https://velog.velcdn.com/images/eschoi2402/post/59adb76f-3fb8-407c-9e41-8b8488eec4fd/image.png)
+
+
+
+
+
+### LetterController
+
+1. 편지 정보 조회 메서드
+
+```
+@Operation(summary = "Show letter info by ID")
+@GetMapping("/letterinfo")
+public String showLetterInfo(@RequestParam Long letterIdx, Model model) {
+    Letter letter = letterService.findLetterById(letterIdx);
+    model.addAttribute("letter", letter);
+    return "letterinfo";
+}
+```
+
+@Operation: 이 메서드의 Swagger 문서화 정보를 제공하며 요약 정보를 지정합니다.
+@GetMapping("/letterinfo"): /letterinfo 경로로 GET 요청이 들어올 때 이 메서드를 실행합니다.
+@RequestParam Long letterIdx: 요청 매개변수로 letterIdx를 받습니다.
+Model: 뷰로 데이터를 전달하기 위해 사용됩니다.
+편지 정보를 조회하여 letterinfo 뷰에 전달합니다.
+
+2. 새 편지 보내기 메서드
+
+```
+@Operation(summary = "Send a new letter")
+@PostMapping("/send")
+public String sendLetter(
+        @RequestParam(name = "title") String title,
+        @RequestParam(name = "content") String content,
+        @RequestParam(name = "sender") String sender,
+        @RequestParam(name = "recipient") String recipient,
+        @RequestParam(name = "letterTypeId") Long letterTypeId,
+        Model model) {
+    Letter letter = new Letter();
+    letter.setTitle(title);
+    letter.setContent(content);
+    letter.setSender(sender);
+    letter.setRecipient(recipient);
+    letter.setLetterType(letterTypeService.findLetterTypeById(letterTypeId));
+    letterService.saveLetter(letter);
+    model.addAttribute("status", "편지가 성공적으로 전송되었습니다");
+    return "redirect:/";
+}
+```
+@PostMapping("/send"): /send 경로로 POST 요청이 들어올 때 이 메서드를 실행합니다.
+편지 정보를 받아 새로운 편지를 생성하고 저장한 후, 홈 페이지로 리다이렉트합니다.
+
+
+
+3. 사용자 편지 목록 조회 메서드
+
+```
+@Operation(summary = "Show letters page for the authenticated user")
+@GetMapping("/letters")
+public String showLettersPage(@AuthenticationPrincipal UserDetails userDetails, Model model) {
+    if (userDetails != null) {
+        User user = userService.findByNickname(userDetails.getUsername());
+        if (user != null) {
+            List<Letter> letters = letterService.findLettersByUserId(user.getIdx_user());
+            model.addAttribute("letters", letters);
+        }
+    }
+    return "letters";
+}
+```
+
+
+@AuthenticationPrincipal UserDetails userDetails: 현재 인증된 사용자 정보를 가져옵니다.
+사용자의 편지 목록을 조회하여 letters 뷰에 전달합니다.
+
+
+4. 편지 내용 조회 메서드
+
+```
+@Operation(summary = "Show letter content by ID")
+@GetMapping("/letters/{id}")
+public String showLetterPage(@PathVariable Long id, Model model) {
+    Letter letter = letterService.findLetterById(id);
+    if (letter == null) {
+        return "error"; // 편지를 찾지 못한 경우 에러 페이지로 이동
+    }
+    model.addAttribute("letter", letter);
+    return "letterContent";
+}
+```
+
+@GetMapping("/letters/{id}"): /letters/{id} 경로로 GET 요청이 들어올 때 이 메서드를 실행합니다. {id}는 경로 변수입니다.
+특정 ID의 편지를 조회하여 letterContent 뷰에 전달합니다.
+
+
+5. 인덱스 페이지 표시 메서드
+
+```
+@Operation(summary = "Show index page")
+@GetMapping("/index")
+public String showIndexPage(Model model, @AuthenticationPrincipal UserDetails userDetails) {
+    if (userDetails != null) {
+        User user = userService.findByNickname(userDetails.getUsername());
+        if (user != null) {
+            List<Letter> letters = letterService.findLettersByRecipient(user.getNickname());
+            model.addAttribute("letters", letters);
+        }
+    }
+    long totalLetters = letterService.countLetters(); // 전체 편지 수 계산
+    model.addAttribute("totalLetters", totalLetters); // 모델에 추가
+    return "index"; // 인덱스 페이지로 이동
+}
+```
+
+@GetMapping("/index"): /index 경로로 GET 요청이 들어올 때 이 메서드를 실행합니다.
+인증된 사용자의 편지 목록과 전체 편지 수를 조회하여 index 뷰에 전달합니다.
+
+
+### LetterService
+
+
+1. 편지 저장 메서드
+```
+public void saveLetter(Letter letter) {
+    letterRepository.save(letter);
+}
+```
+편지 객체를 받아 letterRepository를 사용하여 데이터베이스에 저장합니다.
+
+2. 모든 편지 조회 메서드
+```
+public List<Letter> findAllLetters() {
+    return letterRepository.findAll();
+}
+```
+데이터베이스에서 모든 편지를 조회하여 리스트로 반환합니다.
+
+3. ID로 편지 조회 메서드
+```
+public Letter findLetterById(Long id) {
+    return letterRepository.findById(id).orElse(null);
+}
+```
+주어진 ID로 편지를 조회합니다. 해당 ID의 편지가 없으면 null을 반환합니다.
+
+4. 수신자 이름으로 편지 조회 메서드
+```
+public List<Letter> findLettersByRecipient(String recipient) {
+    return letterRepository.findByRecipient(recipient);
+}
+```
+주어진 수신자 이름으로 편지를 조회하여 리스트로 반환합니다.
+
+5. 사용자 ID로 편지 조회 메서드
+```
+public List<Letter> findLettersByUserId(Long userId) {
+    return letterRepository.findLettersByUserId(userId);
+}
+```
+주어진 사용자 ID로 편지를 조회하여 리스트로 반환합니다.
+
+6. 모든 편지 유형 조회 메서드
+```
+public List<LetterType> findAllLetterTypes() {
+    return letterTypeRepository.findAll();
+}
+```
+데이터베이스에서 모든 편지 유형을 조회하여 리스트로 반환합니다.
+
+7. 편지 리스트 조회 메서드
+```
+public List<Letter> getLettersWithComments() {
+    return letterRepository.findAll();
+}
+```
+모든 편지 목록을 조회합니다.
+
+8. 편지 내용 조회 메서드
+```
+public String getLetterContentById(Long id) {
+    Letter letter = letterRepository.findById(id).orElse(null);
+    if (letter == null) {
+        return null; // 해당 ID의 편지가 없을 경우
+    }
+    return letter.getContent(); // 편지의 내용 반환
+}
+```
+주어진 ID의 편지 내용을 조회하여 반환합니다. 해당 ID의 편지가 없으면 null을 반환합니다.
+
+9. 
+전체 편지 수 계산 메서드
+```
+public long countLetters() {
+    return letterRepository.count();
+}
+```
+데이터베이스에 저장된 전체 편지의 수를 계산하여 반환합니다. (총 발송된 편지의 개수 홈 화면에서 파악하기 위함)
+
+
+### LetterRepository
+
+1. 수신자 이름으로 편지 조회
+
+```
+List<Letter> findByRecipient(String recipient);
+```
+수신자 이름(recipient)으로 편지 목록을 조회합니다.
+
+2. 사용자 ID로 편지 조회
+```
+@Query("SELECT l FROM Letter l JOIN l.letterType lt WHERE lt.user.idx_user = :userId")
+List<Letter> findLettersByUserId(@Param("userId") Long userId);
+```
+@Query 어노테이션을 사용하여 사용자 정의 JPQL(Java Persistence Query Language) 쿼리를 작성합니다.
+Letter 엔터티와 LetterType 엔터티를 조인하여 특정 사용자 ID(userId)와 관련된 편지 목록을 조회합니다.
+@Param("userId")는 쿼리에서 사용하는 파라미터를 바인딩합니다.
+
+
+3. 전체 편지 수 계산
+```
+long count();
+```
+데이터베이스에 저장된 전체 편지의 수를 계산하여 반환합니다. 
+
+
+
+
+
 
 <br>
 <br>
